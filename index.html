@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meowmulia — украшения</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div class="noise"></div>
+    <header class="topbar">
+      <div class="logo">Meowmulia</div>
+      <nav>
+        <a href="#collections">Коллекции</a>
+        <a href="#lookbook">Лукбук</a>
+        <a href="#story">История</a>
+        <a href="#loyalty">Лояльность</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <div class="actions">
+        <button id="telegram-btn" class="pill ghost">Telegram</button>
+        <button id="toggle-mode" class="ghost">Ночь</button>
+        <button id="sparkle-btn" class="pill primary">Искры</button>
+        <button id="cart-toggle" class="pill ghost cart-pill">
+          Корзина <span id="cart-count" class="dot-badge">0</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Дизайн, который мурчит</p>
+          <h1>Уникальные Ювелирные украшения для каждого
+        
+          </h1>
+          <p class="lede">
+            Мягкие линии, филигранный блеск и игривые акценты. Каждое украшение
+            создаётся вручную и не имеет аналогов
+          </p>
+          <div class="hero-actions">
+            <button class="pill primary" id="hero-cta">Смотреть коллекцию</button>
+            <button class="pill ghost" id="moodboard-btn">
+              Добавить в мудборд
+            </button>
+          </div>
+          <div class="statline">
+            <span>925 серебро</span><span>Нержавеющая сталь</span><span>Граненое стекло</span>
+          </div>
+        </div>
+        <div class="hero-card" aria-hidden="true">
+          <div class="halo"></div>
+          <div class="piece-shot">
+            <div class="cat-ear left"></div>
+            <div class="cat-ear right"></div>
+            <div class="inner-glow"></div>
+            <div class="caption">Серьги «Лунной звезды»</div>
+          </div>
+          <p class="microcopy">
+            Баланс сияния и спокойствия.  индивидуальная гравировка.
+          </p>
+        </div>
+      </section>
+
+      <section id="collections" class="section beads">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Выбор недели</p>
+            <h2>Коллекции Meowmulia</h2>
+          </div>
+          <div class="filters">
+            <button class="chip active" data-filter="all">Все</button>
+            <button class="chip" data-filter="day">День</button>
+            <button class="chip" data-filter="night">Ночь</button>
+            <button class="chip" data-filter="bold">Смелые</button>
+          </div>
+        </div>
+        <div id="collection-grid" class="grid"></div>
+      </section>
+
+      <section id="lookbook" class="section split">
+        <div>
+          <p class="eyebrow">Lookbook</p>
+          <h2>Движение света</h2>
+          <p class="lede">
+            Подборка образов для города и вечера. Сочетайте кольца с браслетами,
+            играйте фактурами металла и стекла.
+          </p>
+          <ul class="bullet">
+            <li>Мягкая палитра: пыльная роза, небесно голубой, лавандовый</li>
+            <li>Слоистость: тонкие цепи + массивные акценты</li>
+            <li>Кошачий штрих: заострённые силуэты фурнитуры</li>
+          </ul>
+          <div class="hero-actions">
+            <button class="pill primary" id="lookbook-cta">Подобрать сет</button>
+            <button class="pill ghost" id="ping-btn">Показать пульс</button>
+          </div>
+        </div>
+        <div class="lookbook-card">
+          <div class="tags">
+            <span class="tag">slow made</span>
+            <span class="tag">hand set</span>
+            <span class="tag">reuse gold</span>
+          </div>
+          <div class="lookbook-visual">
+            <div class="glow"></div>
+            <div class="ring-stack">
+              <div class="ring ring-1"></div>
+              <div class="ring ring-2"></div>
+              <div class="ring ring-3"></div>
+            </div>
+            <div class="cat-eye"></div>
+          </div>
+          <p class="microcopy">
+            Лёгкая асимметрия создаёт живое ощущение. Тонкие матовые поверхности подчёркнуты точечным блеском.
+          </p>
+        </div>
+      </section>
+
+      <section id="story" class="section story">
+        <div>
+          <p class="eyebrow">История Meowmulia</p>
+          <h2>Украшения, которые чувствуются</h2>
+          <p class="lede">
+            Мы работаем малыми партиями, отбираем бусины вручную и полируем до
+            «мурлыкающей» гладкости. Прототипы собираем в мастерской с видом на крышу,
+            где живёт наша кошка Муля.
+          </p>
+          <div class="statline">
+            <span>от 72 часов на украшение</span>
+            <span>2 мастера в команде</span>
+            <span>0 компромиссов по этике</span>
+          </div>
+          <div class="custom-cta">
+            <h3>Создайте своё украшение</h3>
+            <p class="microcopy">
+              Подберите форму, металл, цвет покрытий и бусин, задайте смысл через гравировку или
+              добавьте небольшое фото-символ. Мы соберём изделие под ваши пожелания, согласуем макеты
+              и изготовим вручную.
+            </p>
+            <button class="pill primary" id="custom-btn">Хочу индивидуально</button>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-visual">
+            <div class="orbit">
+              <span class="dot"></span>
+              <span class="dot delay"></span>
+              <span class="dot slow"></span>
+            </div>
+            <div class="coin">M</div>
+          </div>
+          <button class="pill primary" id="story-btn">Сделать индивидуально</button>
+        </div>
+      </section>
+
+      <section class="section moodboard chain">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Moodboard</p>
+            <h2>Ваши избранные</h2>
+          </div>
+          <p class="microcopy">Нажмите на карточке «+» чтобы добавить.</p>
+        </div>
+        <div id="moodboard-list" class="moodboard-list empty">
+          <p class="placeholder">Здесь появятся изделия, которые вас зацепили.</p>
+        </div>
+      </section>
+
+      <section id="loyalty" class="section ribbon">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Программа лояльности</p>
+            <h2>Meow Club</h2>
+          </div>
+          <p class="microcopy">Кэшбек баллами и ранний доступ к дропам.</p>
+        </div>
+        <div class="grid loyalty-grid">
+          <div class="card">
+            <h3>Pink</h3>
+            <p class="microcopy">5% баллами за каждый заказ, приветственный бонус 500 ₽.</p>
+          </div>
+          <div class="card">
+            <h3>Rose Gold</h3>
+            <p class="microcopy">8% баллами, приоритетные предзаказы, бесплатное восстановление 1 раз/год.</p>
+          </div>
+          <div class="card">
+            <h3>Blush VIP</h3>
+            <p class="microcopy">12% баллами, персональный подбор, бесплатная доставка и подарочная упаковка.</p>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <button class="pill primary" id="join-loyalty">Вступить в Meow Club</button>
+          <button class="pill ghost" id="learn-loyalty">Узнать детали</button>
+        </div>
+      </section>
+
+      <section id="cart" class="section cart-wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Корзина</p>
+            <h2>Выбрано</h2>
+          </div>
+          <p class="microcopy">Добавляйте из карточек коллекции или лукбука.</p>
+        </div>
+        <div id="cart-panel" class="cart-panel empty">
+          <p class="placeholder">Корзина пуста. Добавьте изделие.</p>
+        </div>
+      </section>
+
+      <section id="checkout" class="section checkout">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Оформление</p>
+            <h2>Сделать заказ</h2>
+          </div>
+          <p class="microcopy">Оставьте контакты, мы уточним размеры и доставку.</p>
+        </div>
+        <form id="checkout-form" class="form">
+          <div class="form-row">
+            <label>Имя
+              <input type="text" name="name" required placeholder="Ваше имя" />
+            </label>
+            <label>Email
+              <input type="email" name="email" required placeholder="you@email.com" />
+            </label>
+          </div>
+          <div class="form-row">
+            <label>Город доставки
+              <input type="text" name="city" required placeholder="Город" />
+            </label>
+            <label>Telegram
+              <input type="url" name="telegram" placeholder="https://t.me/yourname" />
+            </label>
+          </div>
+          <label>Комментарий
+            <textarea name="note" rows="3" placeholder="Размер, камни, пожелания"></textarea>
+          </label>
+          <div class="hero-actions">
+            <button type="submit" class="pill primary">Отправить заявку</button>
+            <span id="order-total" class="microcopy">Итого: 0 ₽</span>
+          </div>
+        </form>
+      </section>
+
+      <section id="contacts" class="section contacts chain">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Контакты</p>
+            <h2>Свяжитесь с нами</h2>
+          </div>
+          <div class="microcopy">
+            Telegram: <a href="https://t.me/meowmulia" target="_blank" rel="noreferrer">@meowmulia</a><br />
+            Email: <a href="mailto:hello@meowmulia.com">hello@meowmulia.com</a>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <h3>Шоурум</h3>
+            <p class="microcopy">Москва, Петровка 12. По записи.</p>
+          </div>
+          <div class="card">
+            <h3>Ателье</h3>
+            <p class="microcopy">Сборка и гравировка — 7–10 дней.</p>
+          </div>
+          <div class="card">
+            <h3>Поддержка</h3>
+            <p class="microcopy">Каждый день, 10:00–22:00 МСК.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>© Meowmulia, 2025</div>
+      <div class="footer-links">
+        <a href="#story">О бренде</a>
+        <a href="mailto:hello@meowmulia.com">hello@meowmulia.com</a>
+        <a href="https://t.me/meowmulia" target="_blank" rel="noreferrer">Telegram</a>
+      </div>
+    </footer>
+
+    <div id="promo-toast" class="promo-toast hidden">
+      <div class="promo-card">
+        <p>ты котик, который любит тыкать? <br />нашим пушистым друзьям скидка 5% на покупку по промокоду <strong>meow</strong></p>
+        <button id="promo-close" class="pill ghost small">Мур!</button>
+      </div>
+    </div>
+  </body>
+</html>
+

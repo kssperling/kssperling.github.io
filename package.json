@@ -1,0 +1,14 @@
+{
+  "name": "meowmulia-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Дизайнерский шаблон сайта украшений Meowmulia на Node.js, HTML, CSS и JS",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
+
