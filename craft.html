@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meowmulia Craft — портфолио</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <header class="topbar">
+      <div class="logo">Meowmulia Craft</div>
+      <nav>
+        <a href="#eva">ЕВА</a>
+        <a href="#models">3D модели</a>
+        <a href="#resin">Эпоксидная смола</a>
+        <a href="#printer">3D принтер</a>
+      </nav>
+      <div class="actions">
+        <a class="pill ghost" href="/hub.html">Навигатор</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Портфолио крафта</p>
+          <h1>Формы, слои и блеск материалов</h1>
+          <p class="lede">
+            Подборка готовых работ: от EVA до эпоксидной смолы и 3D-печати. Выбирайте вкладку,
+            чтобы увидеть примеры.
+          </p>
+          <div class="statline">
+            <span>ручная сборка</span><span>лаки и пигменты</span><span>детализация 0.1 мм</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="halo"></div>
+          <div class="piece-shot craft-hero-shot">
+            <div class="cat-ear left"></div>
+            <div class="cat-ear right"></div>
+            <div class="inner-glow"></div>
+            <div class="caption">Композитный обод</div>
+          </div>
+          <p class="microcopy">
+            Слой EVA, армирование и покрытие глянцевым лаком. Лёгкий вес и гибкость.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Категории</p>
+            <h2>Смените вкладку</h2>
+          </div>
+        </div>
+        <div class="tablist" id="tabs">
+          <button class="chip active" data-tab="eva">EVA</button>
+          <button class="chip" data-tab="models">3D модели</button>
+          <button class="chip" data-tab="resin">Эпоксидная смола</button>
+          <button class="chip" data-tab="printer">3D принтер</button>
+        </div>
+
+        <div class="grid gallery" id="gallery">
+          <article class="card gallery-card" data-tab="eva" id="eva">
+            <div class="thumb grad eva"></div>
+            <h3>Шлем EVA</h3>
+            <p class="microcopy">Сегменты на термоклей, финиш лак мат.</p>
+          </article>
+          <article class="card gallery-card" data-tab="eva">
+            <div class="thumb grad eva"></div>
+            <h3>Наручные пластины</h3>
+            <p class="microcopy">Тиснение + перламутр, скрытые стяжки.</p>
+          </article>
+          <article class="card gallery-card" data-tab="eva">
+            <div class="thumb grad eva"></div>
+            <h3>Клинки EVA</h3>
+            <p class="microcopy">Жёсткая сердцевина, окраска аэрографом.</p>
+          </article>
+
+          <article class="card gallery-card hidden" data-tab="models" id="models">
+            <div class="thumb grad model"></div>
+            <h3>Печатные элементы</h3>
+            <p class="microcopy">STL под точную посадку, шлифовка и грунт.</p>
+          </article>
+          <article class="card gallery-card hidden" data-tab="models">
+            <div class="thumb grad model"></div>
+            <h3>Декор для костюма</h3>
+            <p class="microcopy">Полые формы, вес минимален.</p>
+          </article>
+
+          <article class="card gallery-card hidden" data-tab="resin" id="resin">
+            <div class="thumb grad resin"></div>
+            <h3>Заливки с глиттером</h3>
+            <p class="microcopy">Двухэтапная заливка, УФ-финиш.</p>
+          </article>
+          <article class="card gallery-card hidden" data-tab="resin">
+            <div class="thumb grad resin"></div>
+            <h3>Камни для оправ</h3>
+            <p class="microcopy">Пигменты-хамелеоны, шлифовка торцов.</p>
+          </article>
+
+          <article class="card gallery-card hidden" data-tab="printer" id="printer">
+            <div class="thumb grad print"></div>
+            <h3>Печать деталей</h3>
+            <p class="microcopy">PLA+ 0.12 мм, пост-обработка праймером.</p>
+          </article>
+          <article class="card gallery-card hidden" data-tab="printer">
+            <div class="thumb grad print"></div>
+            <h3>Механизмы</h3>
+            <p class="microcopy">Функциональные шарниры и крепеж.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const tabs = document.querySelectorAll('[data-tab]');
+      const cards = document.querySelectorAll('.gallery-card');
+
+      function setTab(name) {
+        tabs.forEach((btn) => {
+          if (btn.dataset.tab === name) btn.classList.add('active');
+          else if (!btn.closest('.gallery')) btn.classList.remove('active');
+        });
+        cards.forEach((card) => {
+          card.classList.toggle('hidden', card.dataset.tab !== name);
+        });
+      }
+
+      tabs.forEach((btn) => {
+        if (btn.closest('.gallery')) return;
+        btn.addEventListener('click', () => setTab(btn.dataset.tab));
+      });
+
+      setTab('eva');
+    </script>
+  </body>
+</html>

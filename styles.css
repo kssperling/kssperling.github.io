@@ -85,6 +85,35 @@ body {
   text-align: center;
 }
 
+.gallery {
+  margin-top: 18px;
+}
+
+.gallery-card .thumb.grad {
+  background: radial-gradient(circle at 20% 20%, rgba(255, 166, 216, 0.3), transparent 50%),
+    linear-gradient(135deg, rgba(255, 138, 197, 0.16), rgba(255, 209, 232, 0.18));
+}
+
+.gallery-card .thumb.grad.eva {
+  background: linear-gradient(145deg, rgba(255, 90, 160, 0.35), rgba(80, 15, 50, 0.55));
+}
+
+.gallery-card .thumb.grad.model {
+  background: linear-gradient(145deg, rgba(140, 160, 255, 0.35), rgba(40, 20, 90, 0.55));
+}
+
+.gallery-card .thumb.grad.resin {
+  background: linear-gradient(145deg, rgba(255, 200, 255, 0.35), rgba(120, 50, 100, 0.55));
+}
+
+.gallery-card .thumb.grad.print {
+  background: linear-gradient(145deg, rgba(180, 255, 220, 0.35), rgba(40, 100, 80, 0.55));
+}
+
+.craft-hero-shot {
+  background: linear-gradient(145deg, rgba(255, 138, 197, 0.16), rgba(140, 20, 80, 0.18));
+}
+
 body[data-mode='day'] {
   --text: #2a0f20;
   --muted: #5a2744;
