@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Крафт — Эпоксидная смола</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <header class="topbar">
+      <div class="logo">Meowmulia Craft — Смола</div>
+      <nav>
+        <a href="/craft.html">Крафт</a>
+        <a href="/hub.html">Навигатор</a>
+      </nav>
+      <div class="actions">
+        <button id="toggle-mode-resin" class="ghost">Ночь</button>
+        <a class="pill ghost" href="https://t.me/meowmullia" target="_blank" rel="noreferrer">ТГК</a>
+        <a class="pill ghost" href="https://t.me/meowmullia" target="_blank" rel="noreferrer">Личка</a>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Смола</p>
+          <h2>Работы из эпоксидной смолы</h2>
+        </div>
+      </div>
+      <div class="grid wishlist-grid">
+        <article class="card wish-card">
+          <div class="thumb grad resin"></div>
+          <h3>Заливки с глиттером</h3>
+          <p class="microcopy">Двухэтапная заливка, УФ-финиш.</p>
+          <div class="price strong">от 7 800 ₽</div>
+        </article>
+        <article class="card wish-card">
+          <div class="thumb grad resin"></div>
+          <h3>Камни для оправ</h3>
+          <p class="microcopy">Пигменты-хамелеоны, шлифовка торцов.</p>
+          <div class="price strong">от 6 900 ₽</div>
+        </article>
+        <article class="card wish-card">
+          <div class="thumb grad resin"></div>
+          <h3>Мини-кристаллы</h3>
+          <p class="microcopy">Мелкие формы, точная геометрия, полировка.</p>
+          <div class="price strong">от 5 400 ₽</div>
+        </article>
+      </div>
+    </main>
+    <script>
+      const toggleResin = document.getElementById('toggle-mode-resin');
+      if (toggleResin) {
+        toggleResin.addEventListener('click', () => {
+          const nextMode = document.body.dataset.mode === 'day' ? 'night' : 'day';
+          document.body.dataset.mode = nextMode;
+          toggleResin.textContent = nextMode === 'day' ? 'День' : 'Ночь';
+        });
+      }
+    </script>
+  </body>
+</html>

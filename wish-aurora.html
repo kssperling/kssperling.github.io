@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Диадема «Аврора» — Meowmulia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <main class="wish-detail">
+      <header class="section-head">
+        <div>
+          <p class="eyebrow">Вишлист</p>
+          <h1>Диадема «Аврора»</h1>
+        </div>
+        <div class="actions">
+          <button id="toggle-mode-aurora" class="ghost">Ночь</button>
+          <a class="pill ghost" href="/wishlist.html">Назад к списку</a>
+          <a class="pill ghost" href="https://t.me/meowmullia" target="_blank" rel="noreferrer">ТГК</a>
+          <a class="pill ghost" href="https://t.me/meowmullia" target="_blank" rel="noreferrer">Личка</a>
+        </div>
+      </header>
+
+      <section class="gallery-stack">
+        <div class="stack-thumb grad print"></div>
+        <div class="stack-thumb grad print"></div>
+        <div class="stack-thumb grad print"></div>
+      </section>
+
+      <section class="detail-meta">
+        <div class="detail-block">
+          <h3>Описание</h3>
+          <p class="microcopy">
+            3D-печатная база, шлифовка и аэрограф, кристаллы в пружинных креплениях для лёгкой
+            вибрации и блеска.
+          </p>
+        </div>
+        <div class="detail-block">
+          <h3>Требования / кастом</h3>
+          <ul class="bullet">
+            <li>Цвет покрытия (металлик/сатин)</li>
+            <li>Оттенок кристаллов и форма</li>
+            <li>Обхват/посадка и комфорт-подложка</li>
+          </ul>
+        </div>
+        <div class="detail-block">
+          <h3>Сроки и цена</h3>
+          <p class="microcopy">Срок изготовления: 10–14 дней</p>
+          <p class="price strong">18 500 ₽</p>
+          <a class="pill primary" href="https://t.me/meowmullia" target="_blank" rel="noreferrer"
+            >Заказать эту работу</a
+          >
+        </div>
+      </section>
+    </main>
+    <script>
+      const toggleAurora = document.getElementById('toggle-mode-aurora');
+      if (toggleAurora) {
+        toggleAurora.addEventListener('click', () => {
+          const nextMode = document.body.dataset.mode === 'day' ? 'night' : 'day';
+          document.body.dataset.mode = nextMode;
+          toggleAurora.textContent = nextMode === 'day' ? 'День' : 'Ночь';
+        });
+      }
+    </script>
+  </body>
+</html>

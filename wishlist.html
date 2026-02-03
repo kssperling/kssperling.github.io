@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meowmulia — вишлист</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <header class="topbar">
+      <div class="logo">Meowmulia Wish</div>
+      <nav>
+        <a href="/hub.html">Навигатор</a>
+      </nav>
+      <div class="actions">
+        <button id="toggle-mode-wish" class="ghost">Ночь</button>
+        <a class="pill ghost" href="https://t.me/meowmullia" target="_blank" rel="noreferrer">ТГК</a>
+        <a class="pill ghost" href="https://t.me/meowmullia" target="_blank" rel="noreferrer">Личка</a>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Вишлист</p>
+          <h2>Подборка работ с ценами</h2>
+        </div>
+        <p class="microcopy">Кликните по работе — откроется детальная страница в новой вкладке.</p>
+      </div>
+      <div class="grid wishlist-grid">
+        <article class="card wish-card">
+          <div class="thumb grad resin"></div>
+          <h3>Кулон «Лунная капля»</h3>
+          <p class="microcopy">Смола, перламутр, латунная фурнитура.</p>
+          <div class="price strong">12 900 ₽</div>
+          <a class="pill primary small fullwidth" href="/wish-lunar.html" target="_blank">Подробнее</a>
+        </article>
+        <article class="card wish-card">
+          <div class="thumb grad print"></div>
+          <h3>Диадема «Аврора»</h3>
+          <p class="microcopy">3D-печать, покраска аэрографом, стразы.</p>
+          <div class="price strong">18 500 ₽</div>
+          <a class="pill primary small fullwidth" href="/wish-aurora.html" target="_blank">Подробнее</a>
+        </article>
+        <article class="card wish-card">
+          <div class="thumb grad eva"></div>
+          <h3>Набор брошей «Искра»</h3>
+          <p class="microcopy">EVA + металл, глиттер-лаки, ручная сборка.</p>
+          <div class="price strong">9 400 ₽</div>
+          <a class="pill primary small fullwidth" href="/wish-ember.html" target="_blank">Подробнее</a>
+        </article>
+      </div>
+    </main>
+    <script>
+      const toggleWish = document.getElementById('toggle-mode-wish');
+      if (toggleWish) {
+        toggleWish.addEventListener('click', () => {
+          const nextMode = document.body.dataset.mode === 'day' ? 'night' : 'day';
+          document.body.dataset.mode = nextMode;
+          toggleWish.textContent = nextMode === 'day' ? 'День' : 'Ночь';
+        });
+      }
+    </script>
+  </body>
+</html>

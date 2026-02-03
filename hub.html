@@ -22,18 +22,27 @@
           <a class="pill primary" href="https://t.me/meowmulia" target="_blank" rel="noreferrer"
             >ТГК</a
           >
+          <a class="pill ghost" href="/wishlist.html">Вишлист</a>
           <a class="pill ghost" href="/index.html">Сайт с украшениями</a>
-          <a class="pill ghost" href="https://example.com/wigs" target="_blank" rel="noreferrer"
-            >Сайт с париками</a
-          >
-          <a class="pill ghost" href="https://example.com/craft" target="_blank" rel="noreferrer"
-            >Сайт с крафтом</a
-          >
-          <a class="pill ghost" href="https://example.com/photo" target="_blank" rel="noreferrer"
-            >Сайт с фотографиями</a
-          >
+          <a class="pill ghost" href="/craft.html">Сайт с крафтом</a>
+          
+        </div>
+        <div class="hub-actions-mini">
+          <button id="toggle-mode-hub" class="ghost tiny">Ночь</button>
+          <a class="pill ghost tiny" href="https://t.me/meowmullia" target="_blank" rel="noreferrer">ТГК</a>
+          <a class="pill ghost tiny" href="https://t.me/meowmullia" target="_blank" rel="noreferrer">Личка</a>
         </div>
       </div>
     </main>
+    <script>
+      const toggleHub = document.getElementById('toggle-mode-hub');
+      if (toggleHub) {
+        toggleHub.addEventListener('click', () => {
+          const nextMode = document.body.dataset.mode === 'day' ? 'night' : 'day';
+          document.body.dataset.mode = nextMode;
+          toggleHub.textContent = nextMode === 'day' ? 'День' : 'Ночь';
+        });
+      }
+    </script>
   </body>
 </html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Кулон «Лунная капля» — Meowmulia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <main class="wish-detail">
+      <header class="section-head">
+        <div>
+          <p class="eyebrow">Вишлист</p>
+          <h1>Кулон «Лунная капля»</h1>
+        </div>
+        <div class="actions">
+          <button id="toggle-mode-lunar" class="ghost">Ночь</button>
+          <a class="pill ghost" href="/wishlist.html">Назад к списку</a>
+          <a class="pill ghost" href="https://t.me/meowmullia" target="_blank" rel="noreferrer">ТГК</a>
+          <a class="pill ghost" href="https://t.me/meowmullia" target="_blank" rel="noreferrer">Личка</a>
+        </div>
+      </header>
+
+      <section class="gallery-stack">
+        <div class="stack-thumb grad resin"></div>
+        <div class="stack-thumb grad resin"></div>
+        <div class="stack-thumb grad resin"></div>
+      </section>
+
+      <section class="detail-meta">
+        <div class="detail-block">
+          <h3>Описание</h3>
+          <p class="microcopy">
+            Прозрачная смола с микроперламутром, включения фольги и тонкий латунный кант. Лёгкая,
+            гипоаллергенная подвеска с сатиновым шнуром.
+          </p>
+        </div>
+        <div class="detail-block">
+          <h3>Требования / кастом</h3>
+          <ul class="bullet">
+            <li>Цвет микса (перламутр/глиттер)</li>
+            <li>Длина шнура или цепочки</li>
+            <li>Можно добавить мини-гравировку на кант</li>
+          </ul>
+        </div>
+        <div class="detail-block">
+          <h3>Сроки и цена</h3>
+          <p class="microcopy">Срок изготовления: 5–7 дней</p>
+          <p class="price strong">12 900 ₽</p>
+          <a class="pill primary" href="https://t.me/meowmullia" target="_blank" rel="noreferrer"
+            >Заказать эту работу</a
+          >
+        </div>
+      </section>
+    </main>
+    <script>
+      const toggleLunar = document.getElementById('toggle-mode-lunar');
+      if (toggleLunar) {
+        toggleLunar.addEventListener('click', () => {
+          const nextMode = document.body.dataset.mode === 'day' ? 'night' : 'day';
+          document.body.dataset.mode = nextMode;
+          toggleLunar.textContent = nextMode === 'day' ? 'День' : 'Ночь';
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Крафт — 3D модели</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <header class="topbar">
+      <div class="logo">Meowmulia Craft — 3D модели</div>
+      <nav>
+        <a href="/craft.html">Крафт</a>
+        <a href="/hub.html">Навигатор</a>
+      </nav>
+      <div class="actions">
+        <button id="toggle-mode-models" class="ghost">Ночь</button>
+        <a class="pill ghost" href="https://t.me/meowmullia" target="_blank" rel="noreferrer">ТГК</a>
+        <a class="pill ghost" href="https://t.me/meowmullia" target="_blank" rel="noreferrer">Личка</a>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">3D</p>
+          <h2>Печатные и цифровые модели</h2>
+        </div>
+      </div>
+      <div class="grid wishlist-grid">
+        <article class="card wish-card">
+          <div class="thumb grad model"></div>
+          <h3>Элементы брони</h3>
+          <p class="microcopy">STL под точную посадку, шлифовка и грунт.</p>
+          <div class="price strong">от 8 500 ₽</div>
+        </article>
+        <article class="card wish-card">
+          <div class="thumb grad model"></div>
+          <h3>Декор для костюма</h3>
+          <p class="microcopy">Полые формы, лёгкий вес, скрытые крепления.</p>
+          <div class="price strong">от 7 200 ₽</div>
+        </article>
+        <article class="card wish-card">
+          <div class="thumb grad model"></div>
+          <h3>Аксессуары</h3>
+          <p class="microcopy">Мелкие детали, точный рельеф, праймер+лак.</p>
+          <div class="price strong">от 6 000 ₽</div>
+        </article>
+      </div>
+    </main>
+    <script>
+      const toggleModels = document.getElementById('toggle-mode-models');
+      if (toggleModels) {
+        toggleModels.addEventListener('click', () => {
+          const nextMode = document.body.dataset.mode === 'day' ? 'night' : 'day';
+          document.body.dataset.mode = nextMode;
+          toggleModels.textContent = nextMode === 'day' ? 'День' : 'Ночь';
+        });
+      }
+    </script>
+  </body>
+</html>

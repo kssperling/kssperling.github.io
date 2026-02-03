@@ -23,6 +23,9 @@
         <a href="#printer">3D принтер</a>
       </nav>
       <div class="actions">
+        <button id="toggle-mode-craft" class="ghost">Ночь</button>
+        <a class="pill ghost" href="https://t.me/meowmullia" target="_blank" rel="noreferrer">ТГК</a>
+        <a class="pill ghost" href="https://t.me/meowmullia" target="_blank" rel="noreferrer">Личка</a>
         <a class="pill ghost" href="/hub.html">Навигатор</a>
       </div>
     </header>
@@ -55,92 +58,84 @@
       </section>
 
       <section class="section">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">Категории</p>
-            <h2>Смените вкладку</h2>
-          </div>
-        </div>
-        <div class="tablist" id="tabs">
-          <button class="chip active" data-tab="eva">EVA</button>
-          <button class="chip" data-tab="models">3D модели</button>
-          <button class="chip" data-tab="resin">Эпоксидная смола</button>
-          <button class="chip" data-tab="printer">3D принтер</button>
-        </div>
+            
 
-        <div class="grid gallery" id="gallery">
-          <article class="card gallery-card" data-tab="eva" id="eva">
-            <div class="thumb grad eva"></div>
-            <h3>Шлем EVA</h3>
-            <p class="microcopy">Сегменты на термоклей, финиш лак мат.</p>
-          </article>
-          <article class="card gallery-card" data-tab="eva">
-            <div class="thumb grad eva"></div>
-            <h3>Наручные пластины</h3>
-            <p class="microcopy">Тиснение + перламутр, скрытые стяжки.</p>
-          </article>
-          <article class="card gallery-card" data-tab="eva">
-            <div class="thumb grad eva"></div>
-            <h3>Клинки EVA</h3>
-            <p class="microcopy">Жёсткая сердцевина, окраска аэрографом.</p>
-          </article>
-
-          <article class="card gallery-card hidden" data-tab="models" id="models">
-            <div class="thumb grad model"></div>
-            <h3>Печатные элементы</h3>
-            <p class="microcopy">STL под точную посадку, шлифовка и грунт.</p>
-          </article>
-          <article class="card gallery-card hidden" data-tab="models">
-            <div class="thumb grad model"></div>
-            <h3>Декор для костюма</h3>
-            <p class="microcopy">Полые формы, вес минимален.</p>
-          </article>
-
-          <article class="card gallery-card hidden" data-tab="resin" id="resin">
-            <div class="thumb grad resin"></div>
-            <h3>Заливки с глиттером</h3>
-            <p class="microcopy">Двухэтапная заливка, УФ-финиш.</p>
-          </article>
-          <article class="card gallery-card hidden" data-tab="resin">
-            <div class="thumb grad resin"></div>
-            <h3>Камни для оправ</h3>
-            <p class="microcopy">Пигменты-хамелеоны, шлифовка торцов.</p>
-          </article>
-
-          <article class="card gallery-card hidden" data-tab="printer" id="printer">
-            <div class="thumb grad print"></div>
-            <h3>Печать деталей</h3>
-            <p class="microcopy">PLA+ 0.12 мм, пост-обработка праймером.</p>
-          </article>
-          <article class="card gallery-card hidden" data-tab="printer">
-            <div class="thumb grad print"></div>
-            <h3>Механизмы</h3>
-            <p class="microcopy">Функциональные шарниры и крепеж.</p>
-          </article>
+        <div class="hero-actions center-actions">
+          <a class="pill primary" href="/craft-eva.html" target="_blank" rel="noreferrer">EVA</a>
+          <a class="pill ghost" href="/craft-models.html" target="_blank" rel="noreferrer">3D модели</a>
+          <a class="pill ghost" href="/craft-resin.html" target="_blank" rel="noreferrer">Эпоксидная смола</a>
+          <a class="pill ghost" href="/craft-printer.html" target="_blank" rel="noreferrer">3D принтер</a>
         </div>
       </section>
     </main>
 
     <script>
       const tabs = document.querySelectorAll('[data-tab]');
-      const cards = document.querySelectorAll('.gallery-card');
+      const titleEl = document.getElementById('album-title');
+      const descEl = document.getElementById('album-desc');
+      const counterEl = document.getElementById('album-counter');
+      const thumbEl = document.getElementById('album-thumb');
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
 
-      function setTab(name) {
-        tabs.forEach((btn) => {
-          if (btn.dataset.tab === name) btn.classList.add('active');
-          else if (!btn.closest('.gallery')) btn.classList.remove('active');
-        });
-        cards.forEach((card) => {
-          card.classList.toggle('hidden', card.dataset.tab !== name);
-        });
+      const albums = {
+        eva: [
+          { title: 'Шлем EVA', desc: 'Сегменты на термоклей, финиш лак мат.', cls: 'eva' },
+          { title: 'Наручные пластины', desc: 'Тиснение + перламутр, скрытые стяжки.', cls: 'eva' },
+          { title: 'Клинки EVA', desc: 'Жёсткая сердцевина, окраска аэрографом.', cls: 'eva' }
+        ],
+        models: [
+          { title: 'Печатные элементы', desc: 'STL под точную посадку, шлифовка и грунт.', cls: 'model' },
+          { title: 'Декор для костюма', desc: 'Полые формы, вес минимален.', cls: 'model' }
+        ],
+        resin: [
+          { title: 'Заливки с глиттером', desc: 'Двухэтапная заливка, УФ-финиш.', cls: 'resin' },
+          { title: 'Камни для оправ', desc: 'Пигменты-хамелеоны, шлифовка торцов.', cls: 'resin' }
+        ],
+        printer: [
+          { title: 'Печать деталей', desc: 'PLA+ 0.12 мм, пост-обработка праймером.', cls: 'print' },
+          { title: 'Механизмы', desc: 'Функциональные шарниры и крепеж.', cls: 'print' }
+        ]
+      };
+
+      const state = { tab: 'eva', index: 0 };
+
+      function render() {
+        const list = albums[state.tab];
+        const item = list[state.index];
+        titleEl.textContent = item.title;
+        descEl.textContent = item.desc;
+        thumbEl.className = `album-thumb grad ${item.cls}`;
+        counterEl.textContent = `${state.index + 1} / ${list.length}`;
       }
 
-      tabs.forEach((btn) => {
-        if (btn.closest('.gallery')) return;
-        btn.addEventListener('click', () => setTab(btn.dataset.tab));
-      });
+      function setTab(name) {
+        state.tab = name;
+        state.index = 0;
+        tabs.forEach((btn) => btn.classList.toggle('active', btn.dataset.tab === name));
+        render();
+      }
 
-      setTab('eva');
+      function shift(delta) {
+        const list = albums[state.tab];
+        state.index = (state.index + delta + list.length) % list.length;
+        render();
+      }
+
+      tabs.forEach((btn) => btn.addEventListener('click', () => setTab(btn.dataset.tab)));
+      prevBtn.addEventListener('click', () => shift(-1));
+      nextBtn.addEventListener('click', () => shift(1));
+
+      render();
+
+      const toggleCraft = document.getElementById('toggle-mode-craft');
+      if (toggleCraft) {
+        toggleCraft.addEventListener('click', () => {
+          const nextMode = document.body.dataset.mode === 'day' ? 'night' : 'day';
+          document.body.dataset.mode = nextMode;
+          toggleCraft.textContent = nextMode === 'day' ? 'День' : 'Ночь';
+        });
+      }
     </script>
   </body>
 </html>

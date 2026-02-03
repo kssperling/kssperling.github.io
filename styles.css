@@ -81,12 +81,99 @@ body {
   background: rgba(255, 255, 255, 0.08);
 }
 
+.hub-actions-mini {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.tiny {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
 .center {
   text-align: center;
 }
 
 .gallery {
   margin-top: 18px;
+}
+
+.wishlist-grid {
+  align-items: stretch;
+}
+
+.wish-card .thumb {
+  height: 160px;
+}
+
+.fullwidth {
+  width: 100%;
+  text-align: center;
+}
+
+.wish-detail {
+  padding: 32px 24px 48px;
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  gap: 18px;
+}
+
+.gallery-stack {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.stack-thumb {
+  height: 200px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.detail-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.detail-block {
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.detail-block h3 {
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+.fold {
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 10px 12px;
+}
+
+.fold summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.fold-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.thumb.small {
+  height: 120px;
 }
 
 .gallery-card .thumb.grad {
@@ -316,6 +403,10 @@ nav a:hover {
   gap: 12px;
   margin: 20px 0;
   flex-wrap: wrap;
+}
+
+.center-actions {
+  justify-content: center;
 }
 
 .statline {

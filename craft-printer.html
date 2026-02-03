@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Крафт — 3D принтер</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <header class="topbar">
+      <div class="logo">Meowmulia Craft — 3D принтер</div>
+      <nav>
+        <a href="/craft.html">Крафт</a>
+        <a href="/hub.html">Навигатор</a>
+      </nav>
+      <div class="actions">
+        <button id="toggle-mode-printer" class="ghost">Ночь</button>
+        <a class="pill ghost" href="https://t.me/meowmullia" target="_blank" rel="noreferrer">ТГК</a>
+        <a class="pill ghost" href="https://t.me/meowmullia" target="_blank" rel="noreferrer">Личка</a>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">3D принтер</p>
+          <h2>Печать и готовые детали</h2>
+        </div>
+      </div>
+      <div class="grid wishlist-grid">
+        <article class="card wish-card">
+          <div class="thumb grad print"></div>
+          <h3>Корпусные элементы</h3>
+          <p class="microcopy">PLA+ 0.12 мм, пост-обработка праймером.</p>
+          <div class="price strong">от 9 900 ₽</div>
+        </article>
+        <article class="card wish-card">
+          <div class="thumb grad print"></div>
+          <h3>Механизмы</h3>
+          <p class="microcopy">Функциональные шарниры и крепеж.</p>
+          <div class="price strong">от 10 500 ₽</div>
+        </article>
+        <article class="card wish-card">
+          <div class="thumb grad print"></div>
+          <h3>Декор и накладки</h3>
+          <p class="microcopy">Тонкие элементы, точный рельеф, окраска.</p>
+          <div class="price strong">от 7 800 ₽</div>
+        </article>
+      </div>
+    </main>
+    <script>
+      const togglePrinter = document.getElementById('toggle-mode-printer');
+      if (togglePrinter) {
+        togglePrinter.addEventListener('click', () => {
+          const nextMode = document.body.dataset.mode === 'day' ? 'night' : 'day';
+          document.body.dataset.mode = nextMode;
+          togglePrinter.textContent = nextMode === 'day' ? 'День' : 'Ночь';
+        });
+      }
+    </script>
+  </body>
+</html>
