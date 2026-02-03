@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Крафт — EVA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <header class="topbar">
+      <div class="logo">Meowmulia Craft — EVA</div>
+      <nav>
+        <a href="/craft.html">Крафт</a>
+        <a href="/hub.html">Навигатор</a>
+      </nav>
+      <div class="actions">
+        <button id="toggle-mode-eva" class="ghost">Ночь</button>
+        <a class="pill ghost" href="https://t.me/meowmullia" target="_blank" rel="noreferrer">ТГК</a>
+        <a class="pill ghost" href="https://t.me/meowmullia" target="_blank" rel="noreferrer">Личка</a>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">EVA</p>
+          <h2>Работы из EVA</h2>
+        </div>
+      </div>
+      <div class="grid wishlist-grid">
+        <article class="card wish-card">
+          <div class="thumb grad eva"></div>
+          <h3>Шлем EVA</h3>
+          <p class="microcopy">Сегменты на термоклей, матовый лак, лёгкий вес.</p>
+          <div class="price strong">от 14 000 ₽</div>
+        </article>
+        <article class="card wish-card">
+          <div class="thumb grad eva"></div>
+          <h3>Наручи «Роза ветров»</h3>
+          <p class="microcopy">Тиснение, перламутровый пигмент, скрытые стяжки.</p>
+          <div class="price strong">от 9 500 ₽</div>
+        </article>
+        <article class="card wish-card">
+          <div class="thumb grad eva"></div>
+          <h3>Клинки EVA</h3>
+          <p class="microcopy">Армирование, окраска аэрографом, градиент.</p>
+          <div class="price strong">от 11 800 ₽</div>
+        </article>
+      </div>
+    </main>
+    <script>
+      const toggleEva = document.getElementById('toggle-mode-eva');
+      if (toggleEva) {
+        toggleEva.addEventListener('click', () => {
+          const nextMode = document.body.dataset.mode === 'day' ? 'night' : 'day';
+          document.body.dataset.mode = nextMode;
+          toggleEva.textContent = nextMode === 'day' ? 'День' : 'Ночь';
+        });
+      }
+    </script>
+  </body>
+</html>
