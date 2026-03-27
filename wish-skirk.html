@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Скирк — Meowmulia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <main class="wish-detail">
+      <header class="section-head">
+        <div>
+          <p class="eyebrow">Вишлист</p>
+          <h1>Скирк</h1>
+        </div>
+        <div class="actions">
+          <button id="toggle-mode-skirk" class="ghost">Ночь</button>
+          <a class="pill ghost" href="/wishlist.html">Назад к списку</a>
+          <a class="pill ghost" href="https://t.me/meowmullia" target="_blank" rel="noreferrer">ТГК</a>
+          <a class="pill ghost" href="https://t.me/wiillliix" target="_blank" rel="noreferrer">Личка</a>
+        </div>
+      </header>
+
+      <section class="gallery-stack">
+        <div class="stack-thumb grad model">
+          <img
+            src="/assets/photo_2026-03-25_10.12.08-8785844c-0a7f-4489-87da-5537600c21c1.png"
+            alt="Скирк — фото 1"
+          />
+        </div>
+        <div class="stack-thumb grad model">
+          <img
+            src="/assets/photo_2026-03-25_10.12.06-16a301ad-3942-4cf7-b303-cee2ffc02da9.png"
+            alt="Скирк — фото 2"
+          />
+        </div>
+        <div class="stack-thumb grad model">
+          <img
+            src="/assets/photo_2026-03-25_10.12.08-8785844c-0a7f-4489-87da-5537600c21c1.png"
+            alt="Скирк — фото 3"
+          />
+        </div>
+      </section>
+
+      <section class="detail-meta">
+        <div class="detail-block">
+          <h3>Описание</h3>
+          <p class="microcopy">
+            Скирк в стилистике по рефам: каркасные прядки и максимально текстурированный результат.
+          </p>
+        </div>
+
+        <div class="detail-block">
+          <h3>Требования / кастом</h3>
+          <ul class="bullet">
+            <li>Вариант заказываемой сборки: базовый или ускоренный</li>
+            <li>Условия “после доставки базы” уточняются при подтверждении заказа</li>
+          </ul>
+        </div>
+
+        <div class="detail-block">
+          <h3>Сроки и цена</h3>
+          <ul class="bullet">
+            <li>С каркасными прядками + очень текстурная — 4 300 ₽ (5–10 дней после доставки базы)</li>
+            <li>Ускоренное 1–3 дня — +500 ₽ (итого 4 800 ₽)</li>
+          </ul>
+          <a class="pill primary" href="https://t.me/meowmullia" target="_blank" rel="noreferrer"
+            >Заказать эту работу</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const toggleSkirk = document.getElementById('toggle-mode-skirk');
+      if (toggleSkirk) {
+        toggleSkirk.addEventListener('click', () => {
+          const nextMode = document.body.dataset.mode === 'day' ? 'night' : 'day';
+          document.body.dataset.mode = nextMode;
+          toggleSkirk.textContent = nextMode === 'day' ? 'День' : 'Ночь';
+        });
+      }
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Крафт — EVA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <header class="topbar">
+      <div class="logo">Meowmulia Craft — EVA</div>
+      <nav>
+        <a href="/craft.html">Крафт</a>
+        <a href="/hub.html">Навигатор</a>
+      </nav>
+      <div class="actions">
+        <button id="toggle-mode-eva" class="ghost">Ночь</button>
+        <a class="pill ghost" href="https://t.me/meowmullia" target="_blank" rel="noreferrer">ТГК</a>
+        <a class="pill ghost" href="https://t.me/wiillliix" target="_blank" rel="noreferrer">Личка</a>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">EVA</p>
+          <h2>Услуги по мелкому крафту из EVA</h2>
+        </div>
+        <p class="microcopy">Это уже раздел услуг: выбирайте вариант и сразу оставляйте заявку.</p>
+      </div>
+      <div class="grid wishlist-grid">
+        <article class="card wish-card">
+          <div class="thumb grad eva">
+            <img
+              src="/assets/photo_2026-03-27_10.35.00-6fa53169-e57f-4ab2-a1e1-f76c605690df.png"
+              alt="Мелкий крафт EVA — клинок"
+            />
+          </div>
+          <h3>Мелкий крафт из EVA foam</h3>
+          <p class="microcopy">
+            Небольшие оружейные детали и декоративные элементы: чистая форма, объём, аккуратная
+            покраска и финиш.
+          </p>
+          <div class="price strong">от 3 000 ₽</div>
+          <p class="microcopy">Сроки: 1–2 недели</p>
+          <a class="pill primary small fullwidth" href="https://t.me/wiillliix" target="_blank" rel="noreferrer"
+            >Заказать услугу</a
+          >
+        </article>
+        <article class="card wish-card">
+          <div class="thumb grad eva">
+            <img
+              src="/assets/photo_2026-03-27_10.34.59-9d01a1d1-b928-464d-b489-b2885ca1b576.png"
+              alt="Мелкий крафт EVA — кинжал"
+            />
+          </div>
+          <h3>Кастомная мини-реплика</h3>
+          <p class="microcopy">
+            Подбор по рефам, стилизация под канон, акценты цветом и патиной. Подходит для мелкого
+            крафта в комплект к образу.
+          </p>
+          <div class="price strong">от 3 000 ₽</div>
+          <p class="microcopy">Сроки: 1–2 недели</p>
+          <a class="pill primary small fullwidth" href="https://t.me/wiillliix" target="_blank" rel="noreferrer"
+            >Заказать услугу</a
+          >
+        </article>
+        <article class="card wish-card">
+          <div class="thumb grad eva">
+            <img
+              src="/assets/photo_2026-03-27_10.34.58-97c1cf93-eff9-41d4-9df4-f379eaacbe67.png"
+              alt="Мелкий крафт EVA — наручи"
+            />
+          </div>
+          <h3>Наручи и мелкая броня</h3>
+          <p class="microcopy">
+            Текстура, состаривание, рельеф и металлизированные слои. Можно собрать набор
+            аксессуаров под персонажа.
+          </p>
+          <div class="price strong">от 3 000 ₽</div>
+          <p class="microcopy">Сроки: 1–2 недели</p>
+          <a class="pill primary small fullwidth" href="https://t.me/wiillliix" target="_blank" rel="noreferrer"
+            >Заказать услугу</a
+          >
+        </article>
+      </div>
+    </main>
+    <script>
+      const toggleEva = document.getElementById('toggle-mode-eva');
+      if (toggleEva) {
+        toggleEva.addEventListener('click', () => {
+          const nextMode = document.body.dataset.mode === 'day' ? 'night' : 'day';
+          document.body.dataset.mode = nextMode;
+          toggleEva.textContent = nextMode === 'day' ? 'День' : 'Ночь';
+        });
+      }
+    </script>
+  </body>
+</html>
